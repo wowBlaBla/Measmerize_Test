@@ -34,6 +34,7 @@ function buildTree(nodes) {
                     // If previous sibling node exists, insert the current node after it
                     const index = parentNode.children.indexOf(previousSiblingNode);
                     parentNode.children.splice(index + 1, 0, node);
+                    rearrangeNodes(parentNode.children);
                 } else {
                     // If previous sibling node doesn't exist, add the current node as the first child
                     parentNode.children.unshift(node);
@@ -55,5 +56,8 @@ function rearrangeNodes(nodes) {
 }
 
 const tree = buildTree(nodes);
+
+// Arrange root nodes
+rearrangeNodes(tree);
 
 console.log(tree)
