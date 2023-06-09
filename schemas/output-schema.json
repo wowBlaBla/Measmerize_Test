@@ -1,0 +1,45 @@
+{
+    "description": "Expected tree structure",
+    "type": "array",
+    "items": {
+      "$ref": "#/$defs/node"
+    },
+    "$defs": {
+      "node": {
+        "description": "A node",
+        "type": "object",
+        "properties": {
+          "nodeId": {
+            "description": "The identifier for the node",
+            "type": "string"
+          },
+          "name": {
+            "description": "The name of the node",
+            "type": "string"
+          },
+          "parentId": {
+            "description": "The identifier of the parent node",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "previousSiblingId": {
+            "description": "The identifier of the directly preceding sibling node",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "children": {
+            "description": "The child nodes",
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/node"
+            }
+          }
+        }
+      }
+    }
+  }
+  

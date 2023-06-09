@@ -1,0 +1,33 @@
+{
+    "description": "Collection of unsorted nodes",
+    "type": "array",
+    "items": {
+      "description": "A node",
+      "type": "object",
+      "properties": {
+        "nodeId": {
+          "description": "The identifier for the node",
+          "type": "string"
+        },
+        "name": {
+          "description": "The name of the node",
+          "type": "string"
+        },
+        "parentId": {
+          "description": "The identifier of the parent node",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "previousSiblingId": {
+          "description": "The identifier of the directly preceding sibling node",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+  
