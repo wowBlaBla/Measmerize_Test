@@ -60,4 +60,15 @@ const tree = buildTree(nodes);
 // Arrange root nodes
 rearrangeNodes(tree);
 
+const jsonNodes = JSON.stringify(tree, null, 2); // null and 2 for pretty formatting
+
+// Write the JSON tree to a file
+fs.writeFile('./output/result-tree.json', jsonNodes, 'utf8', (err) => {
+  if (err) {
+    console.error('Error writing to file:', err);
+  } else {
+    console.log('tree has been written to result-tree.json');
+  }
+});
+
 console.log(tree)
